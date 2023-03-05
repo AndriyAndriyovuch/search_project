@@ -1,0 +1,12 @@
+<%= form_tag root_path, method: :get do %>
+  <%= text_field_tag :query, params[:query], placeholder: "Let's start..." %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<% if @results.present? %>
+  <% @results.each do | result | %>
+    <%= "Name: #{result["Name"]}" %><br>
+    <%= "Type: #{result["Type"]}" %><br>
+    <%= "Designed by: #{result["Designed by"]}" %><br><br>
+  <% end %>
+<% end %>
