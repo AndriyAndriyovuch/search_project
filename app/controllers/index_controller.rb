@@ -9,7 +9,7 @@ class IndexController < ApplicationController
       params[:negative] == '1' ? regular_negative_match : regular_match
     end
 
-    sort_by_relevance if params[:negative] == '1'
+    sort_by_relevance unless params[:negative] == '1'
   end
 
   private
